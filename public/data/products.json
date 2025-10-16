@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Roll de canela",
+    "price": 4500,
+    "category": "dulce",
+    "description": "Roll sabor canela, contiene nueces.",
+    "imageUrl": "/images/Roll-Canela.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Cookie frutos Rojos",
+    "price": 3200,
+    "category": "dulce",
+    "description": "Cookie con chocolate blanco y frambuesa.",
+    "imageUrl": "/images/Cookie-1.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Cookie nuez",
+    "category": "dulce",
+    "price": 3200,
+    "description": "A base de nuez rellena con dulce de leche.",
+    "imageUrl": "/images/Cookie-2.jpg"
+  }
+]

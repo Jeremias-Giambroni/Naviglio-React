@@ -1,0 +1,23 @@
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+nav a {
+  color: var(--font-color); /* Color de los enlaces */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding: 0.3rem;
+}
+
+a:hover {
+  color: var(--primary-color); ; /* Color al pasar el ratón */
+}

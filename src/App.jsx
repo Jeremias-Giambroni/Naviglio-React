@@ -2,8 +2,10 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { Form } from './components/Form/Form'
+import {BrowserRouter, Routes, Route,} from "react-router-dom";
 import { CartProvider } from './context/CartContext/CartProvider';
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
               <Route path="/" element={<ItemListContainer/>}/>
 
               <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
+
+              <Route path="/contacto" element={<Form/>} /> 
 
             </Routes>
             <Footer />

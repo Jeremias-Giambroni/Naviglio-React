@@ -15,6 +15,9 @@ export const Nav = () =>{
                 <li>
                     <Link to={"/category/dulce"}>Dulce</Link>
                 </li>
+                <li>
+                    <Link to={"/contacto"}>Contacto</Link>
+                </li>
             </ul>
         </nav>
     )

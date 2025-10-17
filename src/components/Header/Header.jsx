@@ -6,7 +6,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../../context/CartContext/useCartContext";
 
 export const Header = () => {
-  // Simulamos un contador (luego podés reemplazarlo con el real del contexto o estado global)
+
   const {getTotalItems} = useCartContext()
 
   return (

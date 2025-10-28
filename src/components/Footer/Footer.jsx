@@ -10,7 +10,7 @@ export const Footer = () => {
 
         <div className="footer-icons">
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/naviglio.pasteleria/"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-icon"

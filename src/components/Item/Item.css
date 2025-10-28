@@ -3,7 +3,7 @@
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   padding: 1rem;
-  max-width: 16.625rem; /* 266px */
+  width: 16.625rem; /* 266px */
   color: var(--font-color);
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
@@ -12,7 +12,7 @@
 
 .product-item img {
   width: 100%;
-  height: auto; /* mantiene proporción */
+  height: auto;
   display: block;
 }
 
@@ -24,7 +24,7 @@
 .product-item a {
   text-decoration: none;
   color: inherit;
-  display: block; /*hacemos que el link tome todo el bloque del article y sea clickeable*/
+  display: block; 
 }
 
 .product-item p {
@@ -47,4 +47,40 @@
 }
 .product-actions .btn .btn-add {
   margin: 1rem;
+}
+
+.image-container {
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+    margin-bottom: 0.5rem; 
+    border-radius: 0.5rem;
+}
+
+.product-item .image-container img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center; 
+  display: block;
+}
+.product-item .image-container img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .product-item {
+        width: 10.4rem; /* Ocupa el 100% de la columna que le asignó el grid */
+        padding: 0.75rem; 
+    }
+
+    .image-container { /* Asumiendo que agregaste este contenedor de imagen */
+        height: 180px; /* Reduce la altura de la imagen para compactar la tarjeta */
+    }
+    
+    .product-title {
+        font-size: 0.9rem;
+    }
+    /*... otras reducciones de texto si son necesarias ...*/
 }

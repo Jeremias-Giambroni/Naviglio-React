@@ -22,6 +22,8 @@ function App() {
 
               <Route path="/contacto" element={<Form/>} /> 
 
+              <Route path='/carrito' element={<h1>Carrito</h1>}/>
+
             </Routes>
             <Footer />
           </div>

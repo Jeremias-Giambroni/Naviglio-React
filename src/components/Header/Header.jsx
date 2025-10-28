@@ -17,7 +17,7 @@ export const Header = () => {
 
       <Nav />
 
-      <Link to={"/cart"} className="cart-link">
+      <Link to={"/carrito"} className="cart-link">
         <div className="cart-container">
           <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
           {getTotalItems() > 0 && (

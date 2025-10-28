@@ -8,11 +8,21 @@ h1{
     cursor: default;
 }
 .container-items{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    justify-content: center;
+    padding: 0 2rem;
+    justify-items: center;
 }
 .titulo-color{
     color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    .container-items {
+        /* CAMBIO CLAVE: Define dos columnas de igual tamaño (1fr 1fr) */
+        grid-template-columns: 1fr 1fr; 
+        gap: 15px; /* Reduce el espacio entre ítems */
+        padding: 0 10px; /* Reduce el padding lateral */
+    }
 }

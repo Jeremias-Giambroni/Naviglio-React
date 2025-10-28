@@ -5,39 +5,69 @@ export const CartProvider = ({children}) => {
     
     const [cart, setCart] = useState([])
 
-    //Funcion para determinar si el objeto agregado ya se encuentra en el carrito
+    //Verifica si al menos un elemento en el array cart tiene el id pasado como argumento. Devuelve true o false.
     const exists = (id) => {
-        const exist = cart.some((p) => p.id === id)
+        const exist = cart.some((p) => p.id === id) 
         return exist;
     };
 
-    //Funcion para agregar item al carrito utilizando "exists" como la función encargada de ver si el producto ya estaba en el carrito
+
+    //Agregar productos al carrito con Map Y SpreadOperator.
+
+
     const addItem = (item) => {
-
         if (exists(item.id)){
-            alert("El producto ya existe en el carrito");
-            return;
+            //map, cuido mutación a nivel del array
+            const updatedCart = cart.map((prod) =>{
+                if(prod.id === item.id){
+                    //Cuido mutación a nivel de objeto
+                    return {...prod, quantity: prod.quantity + item.quantity}
+                }else{
+                    return prod;
+                }                
+            });
+            setCart(updatedCart)
+            alert("Agregado al carrito")
+        }else{
+            setCart([...cart, item]);
+            alert(`${item.name} ha sido agregado al carrito`);
         }
-
-        setCart([...cart, item]);
-        alert(`${item.name} ha sido agregado al carrito`);
     };
 
-    //Funcion para vaciar el carrito
+
+    //Eliminar producto con Filter
+
+
+    const deleteItem = (id) => {
+        const filtered = cart.filter((p)=> p.id !== id)
+        setCart(filtered)
+        alert("producto eliminado");
+    }
+
+
     const clearCart = () => {
         setCart([])
     };
 
-    //Funcion para obtener cantidad de items en el cart (al aun no poder repetirlos obtendremos cuantos distintos hay)
+
+    //Calcular total de items en el carrito
+
     const getTotalItems = () => {
-        if(cart.length){
-            return cart.length;
-        }
+        const totalItems = cart.reduce((acc, p) => acc + p.quantity, 0)
+        return totalItems
     };
 
+    //Calcular precio total de la suma de todos los productos del carrito
+
+    const total = () =>{
+        const total = cart.reduce((acc, p) => acc + p.price * p.quantity, 0);
+
+        return Math.round(total * 100) / 100;
+    }
 
 
-    const values = { cart, addItem, clearCart, getTotalItems };
+
+    const values = { cart, addItem, clearCart, getTotalItems, deleteItem, total };
 
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>
 }

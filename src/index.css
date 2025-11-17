@@ -7,11 +7,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a{
+  color: inherit;}
+
 :root{
   --background-color: #222;
   --background-color-2: #1d1e1e;
+  --backround-color-3: #3a3a3a;
   --header-footer-color: #1a1a1a;
   --border-color: #333;
+  --border-color-2: #444;
   --primary-color: #3BB6C5;
   --secondary-color: #2993a1;
   --font-color: #f5f5f5;

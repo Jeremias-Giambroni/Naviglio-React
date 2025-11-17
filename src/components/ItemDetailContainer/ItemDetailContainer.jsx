@@ -1,41 +1,45 @@
 import { useEffect, useState } from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getProductsById } from "../../services/products";
 
-export const ItemDetailContainer = () =>{
-    const [detail, setDetail] = useState({});
+export const ItemDetailContainer = () => {
+    const [detail, setDetail] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
 
     const { id } = useParams();
 
     useEffect(() => {
-        fetch("/data/products.json")
-            .then((res) => {
-                if(!res.ok){
-                    throw new Error("Hubo un problema al cargar los productos")
-                }
+        setDetail(null);
+        setIsLoading(true);
+        setError(null);
 
-                return res.json();
-            })
-            .then((data) =>{
-                const found = data.find((p) => p.id === id); //Comparo el que trajimos del Json con El de la URL que trajimos con useParams
-                if (found) {
-                   setDetail(found);
-                } else {
-                    throw new Error("Hubo un problema al cargar los productos")
-                }
-            })
-            .catch((err) =>{
-                console.log(err);
-            });
+        const fetchProduct = async () => {
+            try {
+                const product = await getProductsById(id);
+                setDetail(product);
+            } catch (err) {
+                console.error("Error al obtener el producto:", err);
+                setError("No se pudo cargar el detalle del producto. Inténtalo más tarde.");
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchProduct();
+
     }, [id]);
-
     return (
-        <main>
-            {Object.keys(detail).length ? (  //object.keys detail nos sirve para evaluar si el objeto tiene productos y carguen automaticamente antes del cargando o si no hay que cargue
-                <ItemDetail detail = {detail}/> 
-            ) : (
-                <p>Cargando...</p>
+        <main className="item-detail-container">
+            {isLoading && <p>Cargando producto...</p>}
+
+            {error && <p className="error">{error}</p>}
+
+            {!isLoading && !error && detail && (
+                <ItemDetail detail={detail} />
             )}
         </main>
-    )
+    );
 }

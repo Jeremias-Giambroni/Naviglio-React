@@ -1,74 +1,82 @@
 [
   {
-    "id": "1",
-    "name": "Box Cookies",
-    "category": "Cookie",
-    "price": 8000,
-    "description": "New York Cookies. Box degustación de 4 sabores: Clásica con chips de chocolate, Red velvet, nuez rellena de dulce de leche y franbuesa y chocolate blanco.",
-    "imageUrl": "/images/Box-Cookies.jpg"
+    "name": "Torta Brownie",
+    "price": 28000,
+    "category": "Tortas",
+    "description": "Base de brownie, dulce de leche y merengue italiano",
+    "imageUrl": "https://i.ibb.co/WpFqwFBC/5101f8c8dbbf.jpg",
+    "id": "1"
   },
   {
-    "id": "2",
+    "name": "Box Cookies",
+    "price": 8000,
+    "category": "Cookie",
+    "description": "New York Cookies. Box degustación de 4 sabores: Clásica con chips de chocolate, Red velvet, nuez rellena de dulce de leche y frambuesa y chocolate blanco.",
+    "imageUrl": "https://i.ibb.co/sJWPgkTD/4ac12dadc2ca.jpg",
+    "id": "2"
+  },
+  {
     "name": "Cookie Frambu",
     "price": 2500,
     "category": "Cookie",
     "description": "Cookie con chocolate blanco y frambuesa.",
-    "imageUrl": "/images/Cookie-Frambuesa-2.jpg"
+    "imageUrl": "https://i.ibb.co/Gf656pWx/a543e39d0f46.jpg",
+    "id": "3"
   },
   {
-    "id": "3",
     "name": "Cookie nuez",
-    "category": "Cookie",
     "price": 2000,
+    "category": "Cookie",
     "description": "Cookie estilo New York. Con masa de nuez, rellena de dulce de leche",
-    "imageUrl": "/images/Cookie-2.jpg"
+    "imageUrl": "https://i.ibb.co/DPVWqhyv/40c1f6db274a.png",
+    "id": "4"
   },
   {
-    "id": "4",
     "name": "Box de Alfajores",
-    "category": "Alfajor",
     "price": 8200,
-    "description": "Box de Alfajores de 4 unidades. Coco y dulce de leche, clásico Mar del plata relleno con dulce de leche, chocolate blanco y corazón de frambuesa, dulce de leche y almendras",
-    "imageUrl": "/images/Box-Alfajores.jpg"
-  },  
-  {
-    "id": "5",
-    "name": "Alfajor Frambu",
     "category": "Alfajor",
+    "description": "Box de Alfajores de 4 unidades. Coco y dulce de leche, clásico Mar del plata relleno con dulce de leche, chocolate blanco y corazón de frambuesa, dulce de leche y almendras.",
+    "imageUrl": "https://i.ibb.co/8LJCSvmp/4529803f0a05.jpg",
+    "id": "5"
+  },
+  {
+    "name": "Alfajor 'Frambu'",
     "price": 3000,
+    "category": "Alfajor",
     "description": "Alfajor de chocolate blanco con corazón de frambuesa",
-    "imageUrl": "/images/Alfajor-Blanco.jpg"
+    "imageUrl": "https://i.ibb.co/F45pK3XN/94d7b180b71c.jpg",
+    "id": "6"
   },
   {
-    "id": "6",
     "name": "Alfajor Marplatense",
-    "category": "Alfajor",
     "price": 2500,
+    "category": "Alfajor",
     "description": "Alfajor marplatense relleno de dulce de leche",
-    "imageUrl": "/images/Alfajor-Marplatense.jpg"
+    "imageUrl": "https://i.ibb.co/PG3DprxB/2e938bb479c9.jpg",
+    "id": "7"
   },
   {
-    "id": "7",
     "name": "Alfajor Almendras",
-    "category": "Alfajor",
     "price": 2800,
-    "description": "Alfajor con masa de almendras, relleno de dulce de leche y baño de chocolate",
-    "imageUrl": "/images/Alfajor-Almendras.jpg"
-  },
-  {
-    "id": "8",
-    "name": "Alfajor Coco",
     "category": "Alfajor",
-    "price": 1800,
-    "description": "Alfajor de coco relleno de dulce de leche",
-    "imageUrl": "/images/Alfajor-Coco-2.jpg"
+    "description": "Alfajor con masa de almendras, relleno de dulce de leche y baño de chocolate",
+    "imageUrl": "https://i.ibb.co/JwYFMwCp/f33545743555.jpg",
+    "id": "8"
   },
   {
-    "id": "9",
+    "name": "Alfajor Coco",
+    "price": 1800,
+    "category": "Alfajor",
+    "description": "Alfajor de coco relleno de dulce de leche",
+    "imageUrl": "https://i.ibb.co/cKv3QP1M/4f017d7fda92.jpg",
+    "id": "9"
+  },
+  {
     "name": "Roll de canela",
     "price": 2000,
     "category": "Rolls",
     "description": "Roll sabor canela, contiene nueces.",
-    "imageUrl": "/images/Roll-Canela.jpg"
+    "imageUrl": "https://i.ibb.co/5gvf00kH/a3c847dfbfe4.png",
+    "id": "10"
   }
 ]

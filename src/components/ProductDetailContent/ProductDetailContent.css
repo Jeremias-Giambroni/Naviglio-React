@@ -70,7 +70,7 @@
 .product-detail-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: #ccc; /* Un gris más suave para el cuerpo del texto */
+    color: #ccc; 
 }
 
 .product-detail-actions {
@@ -81,6 +81,13 @@
     width: 100%; 
     font-size: 1.1rem;
     padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
 }
 
 

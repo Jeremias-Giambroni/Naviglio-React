@@ -71,14 +71,21 @@
 
 @media (max-width: 600px) {
     .product-item {
-        width: 10.4rem; 
+      width: 10.4rem; 
+      height: 100%;
     }
 
     .image-container {
-        height: 180px; 
+      height: 180px; 
     }
     
     .product-title {
-        font-size: 0.9rem;
+      font-size: 1.1rem;
     }
+    .product-price {
+      font-size: 1.1rem;
+      color: var(--font-color);
+      font-weight: bold;
+    }
+
 }

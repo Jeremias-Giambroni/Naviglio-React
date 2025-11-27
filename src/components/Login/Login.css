@@ -1,0 +1,114 @@
+.admin-layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color-2);
+    padding: 0;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--backround-color-3);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--border-color-2); 
+}
+
+
+.login-form h2{
+    margin-bottom: 25px;
+    color: var(--font-color);
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+
+
+.label-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    width: 100%;
+}
+
+.login-form label{
+    color: var(--font-color);
+    font-weight: 600;
+    font-size: 14px;
+}   
+
+.login-form input{
+    width: 100%;
+    padding: 12px;
+    background-color: var(--border-color-2); 
+    color: var(--font-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.login-form input::placeholder {
+    color: #999; 
+}
+
+
+
+.login-button{
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--font-color); 
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.login-button:hover{
+    background-color: var(--secondary-color);
+}
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+/*Responsive*/
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px;
+        box-shadow: none; 
+        border-radius: 0; 
+        border: none; 
+    }
+    
+    .login-form h2{
+        font-size: 22px;
+    }
+    
+    .login-form input, .login-button {
+        padding: 10px;
+    }
+}

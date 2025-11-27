@@ -12,7 +12,7 @@ export const Cart = () => {
             <div className="cart-items">
                 {cart.length ? (
                     cart.map((prod) => (
-                        <Item key={prod.id} {...prod}>
+                        <Item key={prod.id} {...prod} className="cart-item-layout">
                             <div className="quantity-delete-container">
                                 <span>Cantidad: {prod.quantity}</span>
                                 <button className="delete-btn" onClick={() => deleteItem(prod.id)}>
@@ -30,12 +30,14 @@ export const Cart = () => {
                 <div className="total-pagar">
                     <p>Total a pagar: ${total()}</p>
                 </div>
-                <button className="btn" onClick={checkout}>
-                    Finalizar compra
-                </button>
-                <button className="btn" onClick={clearCart}>
-                    Vaciar carrito
-                </button>
+                <div className="btn-end-cart">
+                    <button className="btn" onClick={checkout}>
+                        Finalizar compra
+                    </button>
+                    <button className="btn" onClick={clearCart}>
+                        Vaciar carrito
+                    </button>
+                </div>
             </div>
             ) : (
                 <Link className="btn" to={"/"}>

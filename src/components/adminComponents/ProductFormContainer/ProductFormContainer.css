@@ -1,113 +1,124 @@
-/* Contenedor del formulario */
 .product-form {
   max-width: 720px;
-  margin: 2rem auto;
-  padding: 1.25rem 1.5rem;
-  background: #2c2c2c; /* gris oscuro */
-  color: #f0f0f0; /* texto claro */
+  margin: auto; 
+  padding: 1rem 1.5rem; 
+  background: var(--backround-color-3); 
+  color: var(--font-color); 
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
 }
 
-/* Título */
+
 .product-form h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.6rem;
-  color: #fff;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  color: var(--font-color);
   text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.75rem;
 }
 
-/* Filas del formulario (tus <div>) */
 .product-form > div {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; 
 }
 
-/* Label + elementos */
 .product-form label {
-  font-size: 0.95rem;
-  color: #ddd;
+  font-size: 1rem;
+  color: var(--font-color);
+  font-weight: bold; 
 }
 
-/* Inputs / textarea */
 .product-form input[type="text"],
 .product-form input[type="number"],
 .product-form input[type="file"],
 .product-form textarea {
   width: 100%;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #444;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border-color-2);
   border-radius: 8px;
-  background: #3a3a3a;
-  color: #f0f0f0;
+  background: var(--background-color-2);
+  color: var(--font-color);
   outline: none;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-/* Placeholder más tenue */
 .product-form ::placeholder {
-  color: #aaa;
+  color: #a0a0a0;
 }
 
-/* Hover/focus */
-.product-form input[type="text"]:focus,
-.product-form input[type="number"]:focus,
-.product-form input[type="file"]:focus,
+
+.product-form input:focus,
 .product-form textarea:focus {
-  border-color: #5aa3ff;
-  background: #353535;
+  border-color: var(--primary-color);
+  background: var(--backround-color-3); 
 }
 
-/* Textarea */
 .product-form textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-/* Nota pequeña */
 .product-form small {
-  color: #bdbdbd;
+  color: #909090;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
 }
 
-/* Preview de imagen */
 .product-form img {
   display: block;
-  max-width: 220px;
+  max-width: 250px;
   border-radius: 8px;
-  border: 1px solid #444;
-  margin-top: 0.35rem;
+  border: 2px solid var(--border-color);
+  margin-top: 0.5rem;
 }
 
+.product-form .error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    padding-left: 5px;
+    font-style: italic;
+}
 
-/* Botón de envío */.product-form .btn {
+.product-form .btn {
   display: block;
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.9rem;
   background: var(--primary-color);
-  font-size: 1rem;
+  color: var(--background-color-2);
+  font-size: 1.1rem;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
 }
 
-.btn:hover {
+.product-form .btn:hover {
   background: var(--secondary-color);
+  color: var(--font-color); 
 }
-.btn:active {
+.product-form .btn:active {
   transform: translateY(1px);
 }
-.btn:disabled {
-  opacity: 0.6;
+.product-form .btn:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
+  background: var(--secondary-color);
 }
 
-/* Layout responsive (opcional, si más adelante querés dos columnas) */
-@media (min-width: 640px) {
-  .product-form .row-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+
+/* Ajustes Responsivos */
+
+@media (max-width: 600px) {
+  .product-form {
+    padding: 1rem; 
+    margin: 0.5rem; 
   }
 }

@@ -20,9 +20,8 @@ h1{
 
 @media (max-width: 600px) {
     .container-items {
-        /* CAMBIO CLAVE: Define dos columnas de igual tamaño (1fr 1fr) */
         grid-template-columns: 1fr 1fr; 
-        gap: 15px; /* Reduce el espacio entre ítems */
-        padding: 0 10px; /* Reduce el padding lateral */
+        gap: 15px;
+        padding: 0 10px;
     }
 }

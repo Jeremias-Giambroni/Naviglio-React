@@ -26,6 +26,7 @@ export const Form = () => {
         <h2>Contacto</h2>
         <form onSubmit={handleSubmit}>
           <input
+            className="contact-input"
             type="text"
             name="name"
             value={user.name}
@@ -34,6 +35,7 @@ export const Form = () => {
             required
           />
           <input 
+            className="contact-input"
             type="email"
             name="email"
             value={user.email}

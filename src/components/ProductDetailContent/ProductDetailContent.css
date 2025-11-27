@@ -96,16 +96,28 @@
     .product-detail-card {
         flex-direction: column; 
         padding: 20px;
+        gap: 20px;
     }
 
     .product-detail-image-section,
     .product-detail-info-section {
         max-width: 100%;
         flex: none; 
+        padding: 10px 0;
     }
 
     .product-detail-title {
         font-size: 1.8rem;
+        margin-bottom: 0.2rem;
+        padding-bottom: 5px;
+    }
+
+    p.product-detail-price{
+        margin: 1rem 0 1rem 0;
+    }
+
+    .product-detail-description-box{
+        margin-top: 0.5rem;
     }
 
     .product-detail-price {

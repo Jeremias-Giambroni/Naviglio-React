@@ -9,12 +9,16 @@ export const validateProduct = (product, fileRequired = true) => {
     errors.price = "El precio debe ser mayor a cero";
   }
 
+  if (!product.stock || product.stock < 0) {
+    errors.stock = "El stock debe ser mayor o igual a cero";
+  }
+
   if (!product.description.trim()) {
     errors.description = "La descripción es obligatoria";
   }
 
   if (!product.category.trim()) {
-    errors.category = "La categoria es obligatoria";
+    errors.category = "La categoría es obligatoria";
   }
 
   if (fileRequired && !product.file) {

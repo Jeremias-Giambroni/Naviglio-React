@@ -1,14 +1,22 @@
+.product-form-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
 .product-form {
   max-width: 720px;
-  margin: auto; 
-  padding: 1rem 1.5rem; 
-  background: var(--backround-color-3); 
-  color: var(--font-color); 
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: var(--backround-color-3);
+  color: var(--font-color);
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--border-color);
 }
-
 
 .product-form h2 {
   margin: 0 0 1.5rem 0;
@@ -23,13 +31,26 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.25rem;
+}
+
+/* Fila con dos columnas (Precio y Stock) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .product-form label {
   font-size: 1rem;
   color: var(--font-color);
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .product-form input[type="text"],
@@ -51,15 +72,14 @@
   color: #a0a0a0;
 }
 
-
 .product-form input:focus,
 .product-form textarea:focus {
   border-color: var(--primary-color);
-  background: var(--backround-color-3); 
+  background: var(--backround-color-3);
 }
 
 .product-form textarea {
-  min-height: 120px;
+  min-height: 100px;
   resize: vertical;
 }
 
@@ -78,11 +98,11 @@
 }
 
 .product-form .error {
-    color: #ff6b6b;
-    font-size: 0.9rem;
-    margin-top: -0.5rem;
-    padding-left: 5px;
-    font-style: italic;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  padding-left: 5px;
+  font-style: italic;
 }
 
 .product-form .btn {
@@ -102,23 +122,33 @@
 
 .product-form .btn:hover {
   background: var(--secondary-color);
-  color: var(--font-color); 
+  color: var(--font-color);
 }
+
 .product-form .btn:active {
   transform: translateY(1px);
 }
+
 .product-form .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background: var(--secondary-color);
 }
 
-
 /* Ajustes Responsivos */
-
 @media (max-width: 600px) {
+  .product-form-section {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
   .product-form {
-    padding: 1rem; 
-    margin: 0.5rem; 
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }

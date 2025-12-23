@@ -2,6 +2,7 @@ import "./Cart.css"
 import { useCartContext } from "../../context/CartContext/useCartContext";
 import { Link } from "react-router-dom";
 import { Item } from "../Item/Item"
+import { MESSAGES, ROUTES } from "../../utils/constants";
 
 export const Cart = () => {
     const {cart, clearCart, deleteItem, total, checkout} = useCartContext()
@@ -22,7 +23,7 @@ export const Cart = () => {
                         </Item>
                     ))
                 ) : (
-                    <p className="empty-cart">Tu carrito está vacío</p>
+                    <p className="empty-cart">{MESSAGES.CART_EMPTY}</p>
                 )}
             </div>
             {cart.length ? (
@@ -40,11 +41,11 @@ export const Cart = () => {
                 </div>
             </div>
             ) : (
-                <Link className="btn" to={"/"}>
+                <Link className="btn" to={ROUTES.HOME}>
                     Volver al inicio
                 </Link>
             )}
 
         </section>
     )
-}
+}    

@@ -1,0 +1,29 @@
+
+/* Este archivo contiene los estilos del contenedor de toasts */
+/* Los estilos individuales de cada toast están en Toast.css */
+
+.toast-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    pointer-events: none; /* Permite click-through del contenedor */
+}
+
+.toast-container > * {
+    pointer-events: all; /* Pero los toasts individuales sí reciben clicks */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .toast-container {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}

@@ -1,27 +1,31 @@
 import "./ItemListContainer.css"
-import { useEffect, useState } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/products";
+import { useAsync } from "../../hooks/useAsync";
 
 export const ItemListContainer = () => {
-    const [products, setProducts] = useState([])
-    const {category} = useParams();
+    const { category } = useParams();
 
-    useEffect(() => {
-        getProducts(category)
-        .then((data) => setProducts(data)  )
-        .catch((err) => {
-            console.log(err);
-        });
-    }, [category]);
+    const { data: products, loading, error } = useAsync(
+        () => getProducts(category),
+        [category]
+    );
 
-    return(
+    return (
         <section className="container-section">
-            <h1>Bienvenidos a <span className="titulo-color">Naviglio</span></h1>
-            <div className="container-items">
-                <ItemList lista = {products}/>
+            <div className="title-container">
+                <h1>Bienvenidos a <span className="titulo-color">Naviglio</span></h1>
             </div>
+            {loading && <p className="loading-message">Cargando productos...</p>}
+            
+            {error && <p className="error-message">❌ {error}</p>}
+            
+            {!loading && !error && products && (
+                <div className="container-items">
+                    <ItemList lista={products} />
+                </div>
+            )}
         </section>
     );
 };

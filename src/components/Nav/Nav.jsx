@@ -1,25 +1,21 @@
 import "./Nav.css"
 import { Link } from "react-router-dom"
+import { CATEGORIES_LIST, ROUTES } from "../../utils/constants"
 
-
-export const Nav = () =>{
-    return(
+export const Nav = () => {
+    return (
         <nav>
             <ul>
                 <li>
-                    <Link to={"/"}>Inicio</Link>
+                    <Link to={ROUTES.HOME}>Inicio</Link>
                 </li>
+                {CATEGORIES_LIST.map((category) => (
+                    <li key={category.id}>
+                        <Link to={category.path}>{category.name}</Link>
+                    </li>
+                ))}
                 <li>
-                    <Link to={"/category/Torta"}>Tortas</Link>
-                </li>
-                <li>
-                    <Link to={"/category/Alfajor"}>Alfajores</Link>
-                </li>
-                <li>
-                    <Link to={"/category/Cookie"}>Cookies</Link>
-                </li>
-                <li>
-                    <Link to={"/contacto"}>Contacto</Link>
+                    <Link to={ROUTES.CONTACT}>Contacto</Link>
                 </li>
             </ul>
         </nav>

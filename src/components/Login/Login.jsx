@@ -23,7 +23,7 @@ export const Login = () => {
         const success = login(userForm.name, userForm.password);
 
         if (success) {
-            navigate("/admin/alta-producto")
+            navigate("/admin/alta-productos")
         }else{
             alert("Credenciales Incorrectas")
             setUserForm({name: "", password : ""});

@@ -83,6 +83,20 @@
     text-align: center;
 }
 
+.btn-back-home{
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-back-home:hover{
+    background-color: var(--border-color);
+}
+
 /* Responsividad */
 
 @media (max-width: 600px) {

@@ -12,48 +12,54 @@ import { MainLayout } from './layouts/MainLayout';
 import { AdminLayout } from './layouts/AdminLayout';
 import { Login } from './components/Login/Login';
 import { RutaProtegida } from './components/RutaProtegida/RutaProtegida';
+import { ToastProvider } from './context/ToastContext/ToastProvider';
+import { ThemeProvider } from './context/ThemeContext/ThemeProvider';
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <AuthProvider>
-          <CartProvider>
-            <div>
-              <Routes>
-                <Route element={<MainLayout/>}>
+        <ThemeProvider>
+          <AuthProvider>
+            <ToastProvider>
+              <CartProvider>
+              <div>
+                <Routes>
+                  <Route element={<MainLayout/>}>
 
-                  <Route path="/" element={<ItemListContainer/>}/>
+                    <Route path="/" element={<ItemListContainer/>}/>
 
-                  <Route path='/category/:category' element={<ItemListContainer/>}/>
+                    <Route path='/category/:category' element={<ItemListContainer/>}/>
 
-                  <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
+                    <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
 
-                  <Route path="/contacto" element={<Form/>} /> 
+                    <Route path="/contacto" element={<Form/>} /> 
 
-                  <Route path='/carrito' element={<Cart/>}/>
-                </Route>
+                    <Route path='/carrito' element={<Cart/>}/>
+                  </Route>
 
-                <Route path='/admin' element={<AdminLayout/>}>
-                  <Route index element={<Login/>}/>
+                  <Route path='/admin' element={<AdminLayout/>}>
+                    <Route index element={<Login/>}/>
 
-                  <Route 
-                    path='alta-productos' 
-                    element ={
-                      <RutaProtegida>
-                        <ProductFormContainer/>
-                      </RutaProtegida>
-                    }
-                  />
-                </Route>
-                {/* <Route path='/admin' element={<ProductFormContainer/>}/> */}
+                    <Route 
+                      path='alta-productos' 
+                      element ={
+                        <RutaProtegida>
+                          <ProductFormContainer/>
+                        </RutaProtegida>
+                      }
+                    />
+                  </Route>
+                  {/* <Route path='/admin' element={<ProductFormContainer/>}/> */}
 
-              </Routes>
-            </div>
-          </CartProvider>
+                </Routes>
+              </div>
+            </CartProvider>
+          </ToastProvider>
         </AuthProvider>
-      </BrowserRouter>
+      </ThemeProvider>
+    </BrowserRouter>
     </>
   )
 }

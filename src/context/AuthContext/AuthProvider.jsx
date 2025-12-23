@@ -1,22 +1,29 @@
-import {  useState } from "react";
+import { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
 
 export const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(() => {
-        const saved = sessionStorage.getItem("session")
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    // useEffect para cargar la sesión al montar el componente
+    useEffect(() => {
+        const saved = sessionStorage.getItem("session");
         if (saved) {
-            return JSON.parse(saved);
+            try {
+                setUser(JSON.parse(saved));
+            } catch (error) {
+                console.error("Error al parsear sesión:", error);
+                sessionStorage.removeItem("session");
+            }
         }
+        setLoading(false);
+    }, []);
 
-        return null;
-    })
-
-
-    const login = (name, password) =>{
+    const login = (name, password) => {
         if (name === "admin" && password === "1234") {
             const session = { name };
-            setUser(session)
-            sessionStorage.setItem("session", JSON.stringify(session))
+            setUser(session);
+            sessionStorage.setItem("session", JSON.stringify(session));
             return true;
         }
         return false;
@@ -24,14 +31,13 @@ export const AuthProvider = ({children}) => {
 
     const logout = () => {
         sessionStorage.removeItem("session");
-        setUser(null)
-        alert("Cerrando sesion")
+        setUser(null);
+        // TODO: Reemplazar con toast notification
     };
 
-
-    return(
-        <AuthContext.Provider value = {{ user, login, logout }}>
+    return (
+        <AuthContext.Provider value={{ user, login, logout, loading }}>
             {children}
         </AuthContext.Provider>
-    )
+    );
 };

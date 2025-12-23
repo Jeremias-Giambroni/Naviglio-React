@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--header-footer-color); /* oscuro igual al footer */
+  background-color: var(--header-footer-color);
   padding: 15px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: sticky;
@@ -33,7 +33,7 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: var(--font-color); 
+  color: var(--font-color);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.05rem;
@@ -41,8 +41,31 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--primary-color); 
+  color: var(--primary-color);
   transform: translateY(-2px);
+}
+
+/* ===== ACTIONS CONTAINER (Hamburguesa + Carrito + Logout) ===== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.hamburger-btn {
+  display: none; /* Oculto en desktop */
+  background: none;
+  border: none;
+  color: var(--font-color);
+  font-size: 26px;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  color: var(--primary-color);
 }
 
 /* ===== CARRITO ===== */
@@ -57,6 +80,14 @@ nav ul li a:hover {
   position: relative;
 }
 
+.cart-container.cart-animate .cart-icon {
+  animation: cartBounce 0.6s ease-in-out;
+}
+
+.cart-container.cart-animate .cart-count {
+  animation: countPop 0.4s ease-in-out;
+}
+
 .cart-icon {
   font-size: 28px;
   color: var(--font-color);
@@ -66,6 +97,35 @@ nav ul li a:hover {
 .cart-icon:hover {
   color: var(--primary-color);
   transform: scale(1.15);
+}
+
+@keyframes cartBounce {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    transform: scale(1.1) translateY(-5px);
+  }
+  50% {
+    transform: scale(0.95) translateY(0);
+  }
+  75% {
+    transform: scale(1.05) translateY(-2px);
+  }
+}
+
+@keyframes countPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ===== CONTADOR ===== */
@@ -85,21 +145,69 @@ nav ul li a:hover {
   border: 2px solid var(--header-footer-color);
 }
 
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--header-footer-color);
+  transform: translateY(-2px);
+}
+
+.logout-icon {
+  font-size: 18px;
+}
+
+.logout-text {
+  font-family: "Poppins", sans-serif;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    padding: 20px;
-    gap: 10px;
+    padding: 15px 20px;
   }
 
-  nav ul {
+  /* Ocultar nav desktop en mobile */
+  nav {
+    display: none;
+  }
+
+  /* Mostrar botón hamburguesa en mobile */
+  .hamburger-btn {
+    display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
   }
 
   .logo {
     height: 50px;
+  }
+
+  .header-actions {
+    gap: 15px;
+  }
+
+  .logout-text {
+    display: none; /* Oculta el texto "Salir" en mobile */
+  }
+
+  .logout-btn {
+    padding: 8px 12px;
   }
 }
